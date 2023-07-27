@@ -1,5 +1,6 @@
 package br.com.projeto;
 
+import br.com.classes.Atendimento;
 import br.com.classes.Cliente;
 import br.com.classes.Diarista;
 
@@ -9,31 +10,40 @@ public class App {
 		
 		Diarista diarista = new Diarista();
 		
-		diarista.nome = "João Kleber";
-		diarista.telefone = "(11) 98787-8924";
-		diarista.endereço = "Avenida Cajamar, Nº 666";
-		diarista.chavePix = "12	3";
+		diarista.setNome("João Kleber");
+		diarista.setTelefone("(11) 98787-8924");
+		diarista.setEndereço("Avenida Cajamar, Nº 666");
+		diarista.setChavePix("123");
 		
-		System.out.println("Nome Diarista: " + diarista.nome);
-		System.out.println("Telefone Diarista: " + diarista.telefone);
-		System.out.println("Endereço Diarista: " + diarista.endereço);
-		System.out.println("Chave Pix Diarista: " + diarista.chavePix);
+		System.out.println("Nome Diarista: " + diarista.getNome());
+		System.out.println("Telefone Diarista: " + diarista.getTelefone());
+		System.out.println("Endereço Diarista: " + diarista.getEndereço());
+		System.out.println("Chave Pix Diarista: " + diarista.getChavePix());
 		diarista.atender("Daniel Petinice");
 		
 		Cliente cliente = new Cliente();
 		
 		System.out.println("====================================================");
 		
-		cliente.nome = "Daniel Petinice";
-		cliente.telefone = "(11) 91283-7293";
-		cliente.endereço = "Avenida Pirapora, Nº 333";
-		cliente.saldo = 100;
+		cliente.setNome("Daniel Petinice");
+		cliente.setTelefone("(11) 91283-7293");
+		cliente.setEndereço("Avenida Pirapora, Nº 999");
 		
-		System.out.println("Nome Cliente: " + cliente.nome);
-		System.out.println("Telefone Cliente: " + cliente.telefone);
-		System.out.println("Endereço Cliente: " + cliente.endereço);
-		System.out.println("Saldo Cliente: " + cliente.saldo);
-
+		
+		System.out.println("Nome Cliente: " + cliente.getNome());
+		System.out.println("Telefone Cliente: " + cliente.getTelefone());
+		System.out.println("Endereço Cliente: " + cliente.getEndereço());
+		System.out.println("Saldo Cliente: " + cliente.getSaldo());
+		cliente.depositar(30);
+		System.out.println("Novo Saldo: " + cliente.getSaldo());
+		
+		System.out.println("====================================================");
+		
+		Atendimento atendimento = new Atendimento();
+		
+		atendimento.setHoras(11);
+		System.out.println(atendimento.getHoras());
+		
 	}
 
 }
